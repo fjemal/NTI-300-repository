@@ -46,22 +46,11 @@ def kernel():
 	print('installing kernel')
 	os.system('yum -y clean all && yum update kernel -y && yum -y reboot')
 def verifying_dirty_cow():
-	os.system('yum -y rpm -q --changelog kernel | grep CVE-2016-5195')
+	os.system('rpm -q --changelog kernel | grep CVE-2016-5195')
 kernel()
 verifying_dirty_cow()
-import os
-def users():
-	print('creating crontab User Alert')
-        os.system('users=$(/usr/bin/who | grep -c"")')
-def users():
-	print('creating crontab User Alert')
-        os.system('users=$(/usr/bin/who | grep -c"")')
-        os.system('if["$users">=1]; echo there is morethan one user logged in')
-	os.system('else: echo lessthan one user logged in')
-	os.system('chmod +x /home/ec2-user/test2.sh')
-        os.system('crontab -l; echo * * * * * /home/ec2-user/test2.sh | mail -s\"User Alert\" fadliebra2012@gmail.com')
-	
-users()
+
+
             	
 
 
