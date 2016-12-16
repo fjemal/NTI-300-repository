@@ -1,13 +1,12 @@
 #!/usr/bin/python
-
-import boto3
+port boto3
 import base64
 import pprint
 
 ec2 = boto3.resource('ec2')
 client = boto3.client('ec2')
 
-amazon_image = 'ami-6f68cf0f'                                       # This will launch a red hat instance
+amazon_image = 'ami-2051294a'                                       # This will launch a red hat instance
 amazon_instance = 't2.micro'                                        # we've been working with micro's, if you use Amizon Linux, you could launch a nono
 amazon_pem_key = 'Simba'                    # the name of the key/pem file you would like to use to access this machine
 firewall_profiles = ['launch-wizard-3']                             # the security group name(s) you would like to use, remember, this is your firewall, make sure the ports you want open are open
@@ -26,7 +25,6 @@ def launch_test_instance():
       KeyName = amazon_pem_key,
       SecurityGroupIds = firewall_profiles,
       
-SecurityGroupIds = firewall_profiles,
       UserData="""#!/usr/bin/python
 import sys, os
 # your script here
@@ -53,9 +51,9 @@ def activate_virtualenv():
         os.system('tree project1')
         print('installing tree')
         print('installing django')
-        os.system('python/project1/ manage.py runserver 0.0.0.0:8000&')
+        os.system('source /opt/django/django-env/bin/activate && python /opt/django/project1/ manage.py runserver 0.0.0.0:8000&')
         print('done')
-        
+
 
 activate_virtualenv()
 """
@@ -63,4 +61,6 @@ activate_virtualenv()
    pprint.pprint(instances)
 
 launch_test_instance()
-              
+ 
+      
+
