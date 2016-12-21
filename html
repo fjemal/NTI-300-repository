@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "installing apache server"
+sudo yum -y install httpd
+
+echo "enabling apache server"
+sudo systemctl enable httpd.service
+
+echo "Please open port 80 if you want to see apache server running "
+
+echo "creating webpage for Fadil"
+sudo sh -c ‘cat > /var/www/html/index.html’ << “EOF”
+<html>
+<body>
+<h>Hello World</h>
+<p>This is Fadil’s first webpage</p>
+</body>
+</html>
+EOF
+
