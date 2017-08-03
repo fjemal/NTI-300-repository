@@ -9,8 +9,10 @@ def install_apache():
        os.system('sudo systemctl start httpd.service')
        print('please you open the security settings for port 80 on your server, you should see the apache start page')
 install_apache()
-
-
+def hello_world():
+	print('Hello NTI-300!')
+	print('This is Fadil python automation script')	      
+hello-world()
 def install_django():
 	print('installing django')
 install_django()
@@ -50,7 +52,7 @@ def install package():
 	os.system('yum -y install '+package)
 intstallpackage()
 
-install_tree():
+def install_tree():
       os.systemc('yum -y install tree')
 install_tree()
 
@@ -61,9 +63,10 @@ mailx()
 def kernel():
 	print('installing kernel')
 	os.system('yum -y clean all && yum update kernel -y && yum -y reboot')
-def verifying_dirty_cow():
-	os.system('rpm -q --changelog kernel | grep CVE-2016-5195')
 kernel()
+	def verifying_dirty_cow():
+	os.system('rpm -q --changelog kernel | grep CVE-2016-5195')
+
 verifying_dirty_cow()
 
 
