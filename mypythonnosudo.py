@@ -45,10 +45,15 @@ def install_git():
 	os.system('git clone https://github.com/fjemal/NTI-300-repository')
 install_git()
 import os
-def install(package):
+def install package():
 	print('installing package')
 	os.system('yum -y install '+package)
-install('tree')
+intstallpackage()
+
+install_tree():
+      os.systemc('yum -y install tree')
+install_tree()
+
 def mailx():
 	print('installing mailx')
 	os.system('yum -y install mailx')
